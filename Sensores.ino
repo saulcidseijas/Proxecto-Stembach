@@ -78,5 +78,12 @@ void loop() {
     digitalWrite(R, LOW);
     delay(1000);
   }
+    //Comprobase a luz e se se detecta movemento acendese
+
+  if (ValHumidade()>75){
+    digitalWrite(B,HIGHT);
+    delay(500);
+    digitalWrite(B,LOW);
+  }
 
 }
