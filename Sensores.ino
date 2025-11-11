@@ -67,16 +67,33 @@ bool Movemento(){
 }
 
 
+
+// ---- VARIABLES DE TEMPO ----
+unsigned long tempoAnteriorLus = 0;
+unsigned long tempoAnteriorDHT = 0;
+unsigned long tempoAnteriorPir = 0;
+
+// Intervalos en milisegundos
+const unsigned long intervaloLus = 5000;  // cada 1 segundo
+const unsigned long intervaloDHT = 5000;  // cada 2 segundos
+const unsigned long intervaloPir = 5000;   // cada 0.5 segundos
+
+
+
+
+
+
 void loop() {
   
-  
+  /*
   if (ValLus()>=950 && Movemento()==true){
     digitalWrite(R, HIGH);
+    while(ValLus()>=950 && Movemento()==true){
+      delay(2000);
+    }
    
-    delay(15000);
-  }else{
     digitalWrite(R, LOW);
-    delay(1000);
+    
   }
     //Comprobase a luz e se se detecta movemento acendese
 
@@ -89,5 +106,60 @@ void loop() {
     
     digitalWrite(B,LOW);
   }
+
+  if(ValTemp()>23){
+    digitalWrite(G, HIGH);
+
+    while(ValTemp()>23){
+
+      delay(1000);
+    }
+
+    digitalWrite(G, LOW);
+  }
+  delay(3000);*/
+
+
+
+
+  unsigned long agora = millis();
+
+
+
+ if (agora - tempoAnteriorLus >= intervaloLus) {
+    tempoAnteriorLus = agora;
+     if (ValLus()>=950 && Movemento()==true){
+      digitalWrite(R, HIGH);
+    
+      
+      
+    }else digitalWrite(R, LOW);
+  }
+
+   if (agora - tempoAnteriorDHT >= intervaloDHT) {
+    tempoAnteriorDHT = agora;
+    if (ValHumidade()>75){
+      digitalWrite(B,HIGH);
+      
+      
+      
+      
+    }else digitalWrite(B,LOW); 
+
+
+     if(ValTemp()>23){
+      digitalWrite(G, HIGH);
+
+     
+   
+    }else digitalWrite(G, LOW);
+  }
+
+    
+
+   
+    
+    
+
 
 }
