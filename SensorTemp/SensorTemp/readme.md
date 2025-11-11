@@ -1,0 +1,1 @@
+O sensor de temperatura é un DHT11
