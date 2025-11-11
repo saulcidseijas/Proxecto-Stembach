@@ -81,7 +81,7 @@ void loop() {
     //Comprobase a luz e se se detecta movemento acendese
 
   if (ValHumidade()>75){
-    digitalWrite(B,HIGHT);
+    digitalWrite(B,HIGH);
     delay(500);
     digitalWrite(B,LOW);
   }
