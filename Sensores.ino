@@ -82,7 +82,11 @@ void loop() {
 
   if (ValHumidade()>75){
     digitalWrite(B,HIGH);
-    delay(500);
+    
+    while (ValHumidade()>75){
+      delay(500);
+    }
+    
     digitalWrite(B,LOW);
   }
 
