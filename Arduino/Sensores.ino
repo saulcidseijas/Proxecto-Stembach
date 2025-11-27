@@ -135,7 +135,7 @@ void loop() {
       
     }else digitalWrite(R, LOW);
   }
-
+/**/
    if (agora - tempoAnteriorDHT >= intervaloDHT) {
     tempoAnteriorDHT = agora;
     if (ValHumidade()>75){
