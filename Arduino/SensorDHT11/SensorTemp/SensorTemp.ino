@@ -1,6 +1,6 @@
 #include <DHT.h>
 
-#define DHTTYPE DHT11
+#define DHTTYPE DHT22
 #define DHTPIN 7 //pin conexión ao sensor
 
 DHT dht(DHTPIN, DHTTYPE);
@@ -25,7 +25,7 @@ void loop(){
   Serial.println(temperatura);
   Serial.println(" ºC");*/
 
-  Serial.println(humidade);
+  Serial.print(humidade);
   Serial.print(",");
   Serial.println(temperatura);
 
