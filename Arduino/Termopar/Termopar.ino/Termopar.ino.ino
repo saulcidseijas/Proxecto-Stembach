@@ -1,8 +1,8 @@
 #include <SPI.h>
 
 // Define MAX6675 SPI pins
-const int thermoDO = 4;
-const int thermoCS = 5;
+const int thermoDO = 5;
+const int thermoCS = 4;
 const int thermoCLK = 6;
 
 void setup() {
